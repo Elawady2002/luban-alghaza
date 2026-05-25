@@ -568,68 +568,132 @@ section div.relative.w-full div.absolute.bottom-6 {
   margin: 0 !important;
 }
 
-/* Custom Offer Tag (Clean Borderless style) */
+/* Custom Offer Tag (iHerb / Amazon style) */
 .custom-offer-tag {
-  display: flex;
-  align-items: center;
-  justify-content: start !important;
-  gap: 4px !important;
-  background-color: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  background-color: #f7fafc !important;
+  border: 1px dashed rgba(31, 55, 41, 0.15) !important;
+  padding: 3px 6px !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
   direction: rtl;
-  height: auto !important;
-  cursor: default !important;
+  height: 25px !important;
+  width: fit-content !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+.custom-offer-tag:hover {
+  background-color: #f0f5f2 !important;
+  border-color: #1f3729 !important;
 }
 
 .custom-offer-tag-text {
-  font-size: 10.5px !important;
+  font-size: 9.5px !important;
   font-weight: 700 !important;
   color: #1f3729 !important;
-  text-align: right;
-  white-space: normal !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 .custom-offer-tag svg {
   flex-shrink: 0;
   color: #1f3729 !important;
-  width: 12px !important;
-  height: 12px !important;
 }
 
-/* Countdown Timer styling (Clean Borderless style) */
+/* Countdown Timer styling */
 .custom-countdown-timer {
-  display: flex;
-  align-items: center;
-  justify-content: start !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   gap: 4px !important;
-  background-color: transparent !important;
-  border: none !important;
+  background-color: #fef2f2 !important;
+  border: 1px solid #fee2e2 !important;
   color: #dc2626 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 3px 6px !important;
+  border-radius: 6px !important;
   direction: rtl;
-  height: auto !important;
+  height: 25px !important;
+  width: fit-content !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
 }
 
 .custom-countdown-timer-value {
   font-variant-numeric: tabular-nums;
   font-family: monospace, 'Tajawal', sans-serif;
-  font-size: 11px !important;
-  background-color: transparent !important;
-  color: #dc2626 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  font-weight: 800 !important;
+  font-size: 10.5px !important;
+  background-color: #dc2626;
+  color: #ffffff;
+  padding: 1px 4px;
+  border-radius: 3px;
   letter-spacing: 0.2px;
+  font-weight: 800 !important;
 }
 
 .custom-countdown-timer svg {
   flex-shrink: 0;
   color: #dc2626 !important;
-  width: 12px !important;
-  height: 12px !important;
+}
+
+/* Custom Row for Price and Stars side by side */
+.custom-price-stars-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-top: auto !important;
+  margin-bottom: 6px !important;
+  direction: rtl !important;
+}
+
+.custom-stars-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 2px !important;
+  direction: ltr !important;
+  margin: 0 !important;
+}
+
+.custom-stars-container svg {
+  width: 13px !important;
+  height: 13px !important;
+  display: inline-block !important;
+}
+
+.custom-stars-container span {
+  font-size: 10.5px !important;
+  font-weight: 500 !important;
+  color: #6b7280 !important;
+  margin-right: 2px !important;
+}
+
+.custom-price-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 3px !important;
+  direction: rtl !important;
+  margin: 0 !important;
+}
+
+.custom-price-container span {
+  color: #111827 !important;
+}
+
+.custom-price-container span.line-through {
+  font-size: 11px !important;
+  font-weight: normal !important;
+  color: #9ca3af !important;
+  margin-right: 4px !important;
 }
 
 /* Custom Cycling Red Badge styling */

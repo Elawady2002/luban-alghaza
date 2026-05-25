@@ -191,16 +191,12 @@
           <div class="text-right lg:text-center flex flex-col flex-1 py-1">
             <a class="block flex-col flex-1 h-full flex mt-0 custom-product-detail-link" href="${p.href}">
               <h3 class="font-bold text-gray-800 text-[14px] md:text-[16px] lg:text-[14px] leading-relaxed lg:leading-snug mb-1 lg:mb-2 line-clamp-2 min-h-0 lg:min-h-[40px] group-hover:text-brand-primary transition-colors">${p.title}</h3>
-              <div class="flex items-center justify-start lg:justify-center gap-1 mb-1.5 lg:mb-3 flex-row-reverse w-fit lg:w-full" dir="ltr">
-                ${starsHtml}
-                <span class="text-[11px] md:text-[12px] lg:text-[11px] font-medium text-gray-500 ml-1">(${count})</span>
-              </div>
               
               <!-- Injected components -->
               <div class="custom-card-extras">
                 ${(getBundleCount(p.title) ? `
                   <div class="custom-bundle-badge">
-                    <span>📦 يحتوي على ${getBundleCount(p.title)} قطع</span>
+                    <span>يحتوي على ${getBundleCount(p.title)} قطع</span>
                   </div>
                 ` : '')}
                 
@@ -213,17 +209,27 @@
 
                 <div class="custom-countdown-timer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  <span style="font-size: 10px; font-weight: bold; margin-left: 2px;">ينتهي:</span>
                   <span class="custom-countdown-timer-value">00:00:00</span>
                 </div>
               </div>
 
               <p class="text-[11px] md:text-[12px] text-gray-500 lg:hidden mb-2">تم شراء 100+ سلعة مؤخراً</p>
-              <div class="flex items-end justify-start lg:justify-center gap-1.5 mb-1.5 font-bold flex-row-reverse mt-auto lg:mt-auto w-fit lg:w-full" dir="ltr">
-                <span class="text-[18px] md:text-[20px] lg:text-[16px] text-gray-900 leading-none">${p.price}</span>
-                <span class="text-[12px] md:text-[13px] lg:text-[13px] text-gray-900 leading-none mb-[2px]">ر.س</span>
-                ${oldPriceHtml}
+              
+              <!-- Custom Price and Stars Row side by side -->
+              <div class="custom-price-stars-row">
+                <div class="custom-price-container">
+                  <span class="text-[18px] md:text-[20px] lg:text-[16px] font-bold leading-none">${p.price}</span>
+                  <span class="text-[12px] md:text-[13px] lg:text-[13px] leading-none mb-[2px]">ر.س</span>
+                  ${oldPriceHtml}
+                </div>
+                <div class="custom-stars-container" dir="ltr">
+                  <div class="flex items-center gap-0.5">
+                    ${starsHtml}
+                  </div>
+                  <span>(${count})</span>
+                </div>
               </div>
+
               <p class="text-[11px] md:text-[12px] text-gray-700 lg:hidden mt-2">توصيل مجاني <span class="font-bold whitespace-nowrap">غداً</span></p>
             </a>
             <div class="mt-auto pt-3 hidden lg:block">
@@ -233,7 +239,6 @@
               </button>
               <button class="w-full border border-[#1f3729] text-[#1f3729] hover:bg-[#1f3729]/5 text-[14px] font-bold py-2.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 mt-2 custom-add-sample-btn">
                 <span>أضف عيّنة بـ 9.00 ر.س</span>
-                <span>🧪</span>
               </button>
             </div>
           </div>
@@ -976,11 +981,11 @@
         if (!card._cyclingTexts) {
           const messages = [];
           if (discountText) {
-            messages.push(`${discountText} 🔥`);
+            messages.push(discountText);
           }
-          messages.push('#بيخلص_بسرعة ⚡');
-          messages.push('#وصل_حديثاً ✨');
-          messages.push('#الأكثر_مبيعاً 🌟');
+          messages.push('#بيخلص_بسرعة');
+          messages.push('#وصل_حديثاً');
+          messages.push('#الأكثر_مبيعاً');
 
           card._cyclingTexts = messages;
           card._currentTextIdx = 0;
@@ -1020,7 +1025,7 @@
             const bundleCount = getBundleCount(title);
             const bundleHtml = bundleCount ? `
               <div class="custom-bundle-badge">
-                <span>📦 يحتوي على ${bundleCount} قطع</span>
+                <span>يحوي على ${bundleCount} قطع</span>
               </div>
             ` : '';
 
@@ -1037,11 +1042,51 @@
               ${offerHtml}
               <div class="custom-countdown-timer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                <span style="font-size: 10px; font-weight: bold; margin-left: 2px;">ينتهي:</span>
                 <span class="custom-countdown-timer-value">00:00:00</span>
               </div>
             `;
             insertRef.parentNode.insertBefore(extrasWrapper, insertRef.nextSibling);
+          }
+        }
+
+        // 7.3 Restructure stars and price to be side-by-side in custom-price-stars-row
+        let starsEl = card.querySelector('div.flex.items-center.justify-start.lg\\:justify-center.gap-1.mb-1\\.5');
+        if (!starsEl) {
+          card.querySelectorAll('div').forEach(div => {
+            if (div.querySelector('.lucide-star') && !div.closest('.custom-price-stars-row') && div.children.length >= 2) {
+              starsEl = div;
+            }
+          });
+        }
+
+        let priceEl = card.querySelector('div.flex.items-end.justify-start.lg\\:justify-center.gap-1\\.5.mb-1\\.5');
+        if (!priceEl) {
+          card.querySelectorAll('div').forEach(div => {
+            if (div.textContent.includes('ر.س') && !div.querySelector('button') && !div.classList.contains('custom-price-stars-row') && !div.closest('.custom-price-stars-row') && div.children.length >= 2) {
+              priceEl = div;
+            }
+          });
+        }
+
+        if (starsEl && priceEl) {
+          let row = card.querySelector('.custom-price-stars-row');
+          if (!row) {
+            row = document.createElement('div');
+            row.className = 'custom-price-stars-row';
+            row.setAttribute('dir', 'rtl');
+            
+            priceEl.parentNode.insertBefore(row, priceEl);
+            
+            starsEl.className = 'custom-stars-container';
+            starsEl.setAttribute('dir', 'ltr');
+            starsEl.style.flexDirection = 'row';
+            starsEl.style.display = 'flex';
+            
+            priceEl.className = 'custom-price-container';
+            priceEl.setAttribute('dir', 'rtl');
+            
+            row.appendChild(priceEl);
+            row.appendChild(starsEl);
           }
         }
 
@@ -1065,7 +1110,6 @@
         sampleBtn.className = 'w-full border border-[#1f3729] text-[#1f3729] hover:bg-[#1f3729]/5 text-[14px] font-bold py-2.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 mt-2 custom-add-sample-btn';
         sampleBtn.innerHTML = `
           <span>أضف عيّنة بـ 9.00 ر.س</span>
-          <span>🧪</span>
         `;
         
         btnContainer.appendChild(sampleBtn);
@@ -1078,7 +1122,7 @@
           // Show success animation on the button
           const textSpan = sampleBtn.querySelector('span');
           const originalText = textSpan.textContent;
-          textSpan.textContent = 'تم إضافة العينة ✓';
+          textSpan.textContent = 'تم إضافة العينة';
           sampleBtn.classList.remove('text-[#1f3729]', 'border-[#1f3729]');
           sampleBtn.classList.add('bg-green-600', 'text-white', 'border-green-600');
           
