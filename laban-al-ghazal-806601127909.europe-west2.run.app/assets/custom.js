@@ -213,19 +213,8 @@
 
                 <div class="custom-countdown-timer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span style="font-size: 10px; font-weight: bold; margin-left: 2px;">ينتهي:</span>
                   <span class="custom-countdown-timer-value">00:00:00</span>
-                </div>
-              </div>
- 
-               <p class="text-[11px] md:text-[12px] text-gray-500 lg:hidden mb-2">تم شراء 100+ سلعة مؤخراً</p>.172a2 2 0 0 0 0-2.828z"></path><path d="M7.5 7.5h.01"></path></svg>
-                      <span class="custom-offer-tag-text">${getProductOffer(p.title)}</span>
-                    </div>
-                  ` : '')}
-
-                  <div class="custom-countdown-timer flex-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span class="custom-countdown-timer-value">00:00:00</span>
-                  </div>
                 </div>
               </div>
 
@@ -1048,6 +1037,7 @@
               ${offerHtml}
               <div class="custom-countdown-timer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span style="font-size: 10px; font-weight: bold; margin-left: 2px;">ينتهي:</span>
                 <span class="custom-countdown-timer-value">00:00:00</span>
               </div>
             `;

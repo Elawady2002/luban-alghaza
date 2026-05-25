@@ -545,18 +545,10 @@ section div.relative.w-full div.absolute.bottom-6 {
 .custom-card-extras {
   display: flex;
   flex-direction: column;
-  gap: 4px !important;
+  gap: 3px !important;
   margin-top: 3px !important;
   margin-bottom: 3px !important;
   width: 100%;
-}
-
-.custom-badges-row {
-  display: flex;
-  flex-direction: row;
-  gap: 5px !important;
-  width: 100%;
-  align-items: center;
 }
 
 /* Bundle Items Badge */
@@ -576,87 +568,88 @@ section div.relative.w-full div.absolute.bottom-6 {
   margin: 0 !important;
 }
 
-/* Custom Offer Tag (iHerb / Amazon style) */
+/* Custom Offer Tag (Clean Borderless style) */
 .custom-offer-tag {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 3px !important;
-  background-color: #f7fafc !important;
-  border: 1px dashed rgba(31, 55, 41, 0.15) !important;
-  padding: 3px 6px !important;
-  border-radius: 6px !important;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  justify-content: start !important;
+  gap: 4px !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
   direction: rtl;
-  height: 25px !important;
-}
-
-.custom-offer-tag:hover {
-  background-color: #f0f5f2 !important;
-  border-color: #1f3729 !important;
+  height: auto !important;
+  cursor: default !important;
 }
 
 .custom-offer-tag-text {
-  font-size: 9.5px !important;
+  font-size: 10.5px !important;
   font-weight: 700 !important;
   color: #1f3729 !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
+  text-align: right;
+  white-space: normal !important;
 }
 
 .custom-offer-tag svg {
   flex-shrink: 0;
+  color: #1f3729 !important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
-/* Countdown Timer styling */
+/* Countdown Timer styling (Clean Borderless style) */
 .custom-countdown-timer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start !important;
   gap: 4px !important;
-  background-color: #fef2f2 !important;
-  border: 1px solid #fee2e2 !important;
+  background-color: transparent !important;
+  border: none !important;
   color: #dc2626 !important;
-  padding: 3px 6px !important;
-  border-radius: 6px !important;
+  padding: 0 !important;
+  margin: 0 !important;
   direction: rtl;
-  height: 25px !important;
+  height: auto !important;
 }
 
 .custom-countdown-timer-value {
   font-variant-numeric: tabular-nums;
   font-family: monospace, 'Tajawal', sans-serif;
-  font-size: 10.5px !important;
-  background-color: #dc2626;
-  color: #ffffff;
-  padding: 1px 4px;
-  border-radius: 3px;
-  letter-spacing: 0.2px;
+  font-size: 11px !important;
+  background-color: transparent !important;
+  color: #dc2626 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   font-weight: 800 !important;
+  letter-spacing: 0.2px;
 }
 
-/* Cycling Hashtag Wrapper absolute alignment on image */
-.custom-cycling-hashtag-wrapper {
+.custom-countdown-timer svg {
+  flex-shrink: 0;
+  color: #dc2626 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Custom Cycling Red Badge styling */
+.custom-cycling-red-badge {
   position: absolute;
   top: 6px;
-  right: 6px;
+  left: 6px;
   z-index: 10;
   pointer-events: none;
 }
 
-.custom-cycling-hashtag {
+.custom-cycling-red-badge span {
   display: inline-block;
-  background-color: rgba(31, 55, 41, 0.9) !important;
-  backdrop-filter: blur(4px);
+  background-color: #ff4757 !important;
   color: #ffffff !important;
-  font-size: 9px !important;
+  font-size: 10px !important;
   font-weight: 800 !important;
-  padding: 1.5px 6px !important;
-  border-radius: 5px !important;
-  box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.08);
+  padding: 3px 8px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.25);
   transition: opacity 0.3s ease-in-out;
   direction: rtl;
 }
