@@ -1,4 +1,4 @@
-/* Custom CSS overrides for Luban Al-Ghazal Customizations */
+/* Custom CSS overrides for Luban Al-Ghazal Restructuring */
 
 /* Top Bar Announcement Slider */
 .custom-announcement-slider {
@@ -42,7 +42,216 @@
   flex-shrink: 0;
 }
 
-/* Navigation Menu Offers */
+/* Country Selector (Next to Logo) */
+.custom-country-selector {
+  position: relative;
+  margin-inline-start: 1rem;
+}
+
+.custom-country-selector button {
+  outline: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: #4a5568;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.custom-country-selector button:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  color: #1f3729;
+}
+
+.custom-country-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #eaf1ec;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  width: 180px;
+  overflow: hidden;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-country-dropdown.hidden {
+  display: none !important;
+}
+
+.custom-country-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: right;
+}
+
+.custom-country-option:hover {
+  background-color: #f7fafc;
+  color: #1f3729;
+}
+
+.custom-country-option.active {
+  background-color: #eaf1ec;
+  color: #1f3729;
+  font-weight: 700;
+}
+
+/* Middle Search Input Bar */
+.custom-search-container {
+  flex: 1;
+  max-width: 420px;
+  margin-inline: 1.5rem;
+  position: relative;
+}
+
+.custom-search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-search-input {
+  width: 100%;
+  height: 42px;
+  padding-inline-start: 2.75rem; /* For left search icon */
+  padding-inline-end: 1rem;
+  border-radius: 9999px;
+  border: 1.5px solid #eaf1ec;
+  background-color: #fcfdfd;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a202c;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  text-align: right;
+}
+
+.custom-search-input:focus {
+  border-color: #1f3729;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(31, 55, 41, 0.08);
+}
+
+.custom-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  pointer-events: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.custom-search-input:focus + .custom-search-icon {
+  color: #1f3729;
+}
+
+.custom-search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #eaf1ec;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  max-height: 380px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.custom-search-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-search-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-search-dropdown::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.custom-search-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f7fafc;
+  direction: rtl;
+}
+
+.custom-search-item:last-child {
+  border-bottom: none;
+}
+
+.custom-search-item:hover {
+  background-color: #f7fafc;
+}
+
+.custom-search-item-image {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #f7fafc;
+  flex-shrink: 0;
+}
+
+.custom-search-item-info {
+  flex: 1;
+  text-align: right;
+}
+
+.custom-search-item-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 2px;
+}
+
+.custom-search-item-category {
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.custom-search-item-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1f3729;
+  white-space: nowrap;
+}
+
+/* Sub-Navigation Bar */
+.sub-navbar {
+  background-color: transparent;
+  border-bottom: 1px solid #eaf1ec;
+  padding-block: 0.75rem;
+  position: relative;
+  z-index: 50;
+}
+
 .custom-featured-link {
   color: #e53e3e !important;
   font-weight: 700 !important;
@@ -83,6 +292,31 @@
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
+
+/* Hero Banner Sizing overrides */
+@media (min-width: 768px) {
+  section div.relative.w-full {
+    height: 320px !important;
+  }
+  section div.relative.w-full div.bg-cover {
+    background-position: center 20% !important;
+  }
+  /* Hide original dots inside the banner */
+  section div.relative.w-full div.absolute.bottom-6 {
+    display: none !important;
+  }
+}
+
+/* Reposition Promo Bar to overlap the bottom of the banner */
+@media (min-width: 1024px) {
+  .flex-grow > div.max-w-\[1400px\] {
+    margin-top: -4.5rem !important; /* Overlaps bottom of banner */
+    position: relative;
+    z-index: 20;
+  }
+}
+
+/* Product Card Customizations */
 
 /* Hide original React discount badge elements to avoid duplication */
 .group .absolute.top-3.w-full .bg-\[\#ff4757\],
