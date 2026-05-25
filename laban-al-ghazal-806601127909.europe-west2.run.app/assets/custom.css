@@ -1,0 +1,277 @@
+/* Custom CSS overrides for Luban Al-Ghazal Customizations */
+
+/* Top Bar Announcement Slider */
+.custom-announcement-slider {
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.custom-announcement-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.custom-announcement-item {
+  height: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 13px;
+  direction: rtl;
+}
+
+.custom-announcement-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* Navigation Menu Offers */
+.custom-featured-link {
+  color: #e53e3e !important;
+  font-weight: 700 !important;
+}
+
+.custom-featured-link:hover {
+  color: #c53030 !important;
+}
+
+.custom-nav-dropdown-trigger {
+  position: relative;
+  padding-block: 0.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #ffffff;
+  border: 1px solid #eaf1ec;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px -5px rgba(31, 55, 41, 0.08), 0 10px 15px -5px rgba(31, 55, 41, 0.04);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: right;
+  color: #1f3729;
+}
+
+.custom-nav-dropdown-trigger:hover .custom-nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Hide original React discount badge elements to avoid duplication */
+.group .absolute.top-3.w-full .bg-\[\#ff4757\],
+.group .absolute.top-1.left-1 .bg-\[\#ff4757\],
+.group .bg-\[\#ff4757\],
+.group [class*="bg-[#ff4757]"] {
+  display: none !important;
+}
+
+/* Cycling Badge in Image Wrapper */
+.custom-cycling-badge-wrapper {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.custom-cycling-badge {
+  display: inline-block;
+  background-color: #ff4757;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease-in-out;
+  direction: rtl;
+}
+
+/* Product Card Details Enhancements */
+.custom-card-extras {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.custom-extras-row {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+.custom-extras-row > div {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Bundle Items Badge */
+.custom-bundle-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(220, 168, 67, 0.08);
+  border: 1px solid rgba(220, 168, 67, 0.15);
+  color: #a87e2b;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 5px;
+  width: fit-content;
+  direction: rtl;
+  margin-top: 2px;
+}
+
+/* Custom Offer Tag (No Emojis, Classic Dashed Design) */
+.custom-offer-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background-color: #f0f4f1; /* Light gray-green background */
+  border: 1px dashed #1f3729; /* Dashed dark-green border */
+  padding: 3px 6px;
+  border-radius: 6px;
+  direction: rtl;
+  height: 25px;
+}
+
+.custom-offer-tag-text {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #1f3729;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.custom-offer-tag svg {
+  flex-shrink: 0;
+}
+
+/* Countdown Timer (No Labels, Solid Red Value Block) */
+.custom-countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #dc2626;
+  padding: 3px 6px;
+  border-radius: 6px;
+  direction: rtl;
+  height: 25px;
+}
+
+.custom-countdown-timer-value {
+  font-variant-numeric: tabular-nums;
+  font-family: monospace, 'Tajawal', sans-serif;
+  font-size: 10.5px;
+  background-color: #dc2626;
+  color: #ffffff;
+  padding: 1px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.2px;
+  font-weight: 800;
+}
+
+.custom-countdown-timer svg {
+  flex-shrink: 0;
+}
+
+/* Price and Stars Grouping Row */
+.custom-price-stars-row {
+  display: flex;
+  flex-direction: row-reverse; /* Price on the right, stars on the left */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto; /* Pushes to bottom of details section */
+  padding-top: 8px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.custom-price-stars-row > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Fix text layouts inside original containers */
+.custom-price-stars-row div[dir="ltr"] {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  gap: 2px !important;
+}
+
+@media (max-width: 1023px) {
+  .custom-price-stars-row {
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: none;
+  }
+}
+
+/* Sample Button Styles (No Emojis) */
+.custom-add-sample-btn {
+  width: 100%;
+  border: 1.5px solid #1f3729 !important;
+  background-color: transparent !important;
+  color: #1f3729 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  padding-block: 8px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-top: 6px !important;
+  cursor: pointer !important;
+}
+
+.custom-add-sample-btn:hover {
+  background-color: rgba(31, 55, 41, 0.08) !important;
+}
+
+.custom-add-sample-btn.bg-green-600 {
+  background-color: #16a34a !important; /* Green 600 */
+  color: #ffffff !important;
+  border-color: #16a34a !important;
+}
